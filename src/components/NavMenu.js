@@ -31,8 +31,8 @@ const NavMenu = () => {
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
             <VStack p="2rem">
-              <Link to="/">About Us</Link>
-              <Link to="/">Learn More</Link>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
             </VStack>
           </DrawerBody>
           <DrawerFooter textAlign="center">
