@@ -55,8 +55,12 @@ class ShopProvider extends Component {
   }
 
   removeLineItem = async (lineItemIdsToRemove) => {
-    const checkout = await client.checkout.removeLineItems(this.state.checkout.id, lineItemIdsToRemove)
-    this.setState({ checkout: checkout})
+    try {
+      const checkout = await client.checkout.removeLineItems(this.state.checkout.id, lineItemIdsToRemove)
+      this.setState({ checkout: checkout})
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   fetchAllProducts = async () => {
