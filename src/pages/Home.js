@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Grid, Text, Image, Button } from '@chakra-ui/react'
+import { Box, Grid, Text, Image, Button, Flex } from '@chakra-ui/react'
 
 import { ShopContext } from '../context/shopContext'
 import WelcomeBanner from '../components/WelcomeBanner'
@@ -26,7 +26,9 @@ const Home = () => {
           products.map(product => (
             <Link to={`/products/${product.handle}`} key={product.id}>
               <Box _hover={{ opacity: '80%' }} textAlign="center">
-                <Image src={product.images[0].src} />
+                <Flex flexDirection="row" alignItems="center" justifyContent="center">
+                  <Image src={product.images[0].src} w="90%" />
+                </Flex>
                 <Text>
                   {product.title}
                 </Text>

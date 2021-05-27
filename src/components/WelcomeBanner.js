@@ -9,7 +9,7 @@ const WelcomeBanner = () => {
           Welcome to Demo Candle!
         </Heading>
         <Text pb="1rem" color="gray.500">
-          This is a demo store, built with Reach, using Shopify as a headless CMS
+          This is a demo store, built with Reach, using Shopify as a headless CMS.
         </Text>
       </Center>
     </Box>
