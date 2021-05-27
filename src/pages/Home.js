@@ -15,9 +15,6 @@ const Home = () => {
 
   if (!products) return <div>Loading...</div>
 
-
-  console.log(products)
-
   return (
     <Box>
       <WelcomeBanner />
