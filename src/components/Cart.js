@@ -5,6 +5,7 @@ import {
   Grid,
   Flex,
   Image,
+  Link,
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -20,6 +21,8 @@ import { CloseIcon } from '@chakra-ui/icons'
 const Cart = () => {
 
   const { isCartOpen, closeCart, checkout, removeLineItem } = useContext(ShopContext)
+
+  console.log(checkout)
 
   return (
     <>
@@ -55,7 +58,9 @@ const Cart = () => {
           </DrawerBody>
 
           <DrawerFooter>
-            <Button>Checkout</Button>
+            <Button w="100%">
+              <Link w="100%" href={checkout.webUrl}>Checkout</Link>
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
