@@ -73,6 +73,10 @@ class ShopProvider extends Component {
     this.setState({ product })
   }
 
+  clearProduct = async () => {
+    this.setState({ product: {}})
+  }
+
   closeCart = () => { this.setState({ isCartOpen: false }) }
 
   openCart = () => { this.setState({ isCartOpen: true }) }
@@ -89,6 +93,7 @@ class ShopProvider extends Component {
           ...this.state,
           fetchAllProducts: this.fetchAllProducts,
           fetchProductWithHandle: this.fetchProductWithHandle,
+          clearProduct: this.clearProduct,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
           closeCart: this.closeCart,

@@ -8,10 +8,14 @@ const ProductPage = () => {
 
   const { handle } = useParams()
 
-  const { fetchProductWithHandle, addItemToCheckout, product } = useContext(ShopContext)
+  const { fetchProductWithHandle, addItemToCheckout, product, clearProduct } = useContext(ShopContext)
 
   useEffect(() => {
     fetchProductWithHandle(handle)
+
+    return function cleanUp() {
+      clearProduct()
+    }
   }, [fetchProductWithHandle, handle])
 
   if (!product.title) return <div>Loading...</div>
