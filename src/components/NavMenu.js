@@ -1,12 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Box,
-  Button, 
   Text,
-  Grid,
-  Flex,
-  Image,
   Drawer,
   DrawerBody,
   DrawerFooter,
