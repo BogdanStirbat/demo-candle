@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Grid, Text, Image } from '@chakra-ui/react'
+import { Box, Grid, Text, Image, Button } from '@chakra-ui/react'
 
 import { ShopContext } from '../context/shopContext'
+import WelcomeBanner from '../components/WelcomeBanner'
 
 const Home = () => {
 
-  const { fetchAllProducts, products } = useContext(ShopContext)
+  const { fetchAllProducts, products, addItemToCheckout } = useContext(ShopContext)
 
   useEffect(() => {
     fetchAllProducts()
@@ -19,6 +20,7 @@ const Home = () => {
 
   return (
     <Box>
+      <WelcomeBanner />
       <Grid templateColumns="repeat(3, 1fr)">
         {
           products.map(product => (
@@ -31,6 +33,12 @@ const Home = () => {
                 <Text>
                   ${product.variants[0].price}
                 </Text>
+                <Button
+                  onClick={(e) => {e.preventDefault(); addItemToCheckout(product.variants[0].id, 1)}}
+                  _hover={{ opacity: '70%' }}
+                  w="8rem" backgroundColor="#B5B7B4" color="white">
+                  Add To Cart
+                </Button>
               </Box>
             </Link>
           ))
