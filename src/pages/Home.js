@@ -18,11 +18,11 @@ const Home = () => {
   return (
     <Box>
       <WelcomeBanner />
-      <Grid templateColumns="repeat(3, 1fr)">
+      <Grid templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(3, 1fr)"]}>
         {
           products.map(product => (
             <Link to={`/products/${product.handle}`} key={product.id}>
-              <Box _hover={{ opacity: '80%' }} textAlign="center">
+              <Box _hover={{ opacity: '80%' }} textAlign="center" mb="2rem">
                 <Flex flexDirection="row" alignItems="center" justifyContent="center">
                   <Image src={product.images[0].src} w="90%" />
                 </Flex>
