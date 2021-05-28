@@ -7,7 +7,7 @@ import { ShopContext } from '../context/shopContext'
 
 const NavBar = () => {
 
-  const { openCart, openMenu, checkout } = useContext(ShopContext)
+  const { openCart, openMenu } = useContext(ShopContext)
 
   return (
     <Flex backgroundColor="#B5B7B4" flexDir="row" justifyContent="space-between" p="2rem">

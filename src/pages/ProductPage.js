@@ -16,7 +16,7 @@ const ProductPage = () => {
     return function cleanUp() {
       clearProduct()
     }
-  }, [fetchProductWithHandle, handle])
+  }, [fetchProductWithHandle, handle, clearProduct])
 
   if (!product.title) return <div>Loading...</div>
 
